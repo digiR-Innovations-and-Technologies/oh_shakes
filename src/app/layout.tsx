@@ -2,6 +2,10 @@
 import { Metadata } from "next";
 import "./globals.css"; // If you have global styles
 import { Caveat, Nunito } from "next/font/google";
+import Navbar from "@/components/ui/Navbar";
+import BottomNavbar from "@/components/ui/BottomNavbar";
+import Footer from "@/components/ui/Footer";
+import Announcement from "@/components/ui/Announcement";
 
 // Import Caveat and Nunito fonts
 export const caveat = Caveat({
@@ -29,7 +33,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${caveat.variable} ${nunito.variable}`}>
-        {children}
+        <main className="pb-[78px] md:pb-0">
+          <Announcement/>
+          <Navbar/>
+          {children}
+          <BottomNavbar/>
+          <Footer/>
+          </main>
       </body>
     </html>
   );

@@ -1,26 +1,27 @@
 import Image from "next/image";
-import { caveat } from "@/app/layout";
 import CustomSlider from "@/components/CustomSlider";
-import HeroImage from "../../../../public/images/hero.jpg";
+import slide1 from "../../../../public/images/slide1.jpg";
+import slide2 from "../../../../public/images/slide2.jpg";
+import slide3 from "../../../../public/images/slide3.jpg";
 
 const slidesData = [
   {
     id: 1,
     title: "Slide 1",
     description: "This is the first slide.",
-    image: HeroImage,
+    image: slide1,
   },
   {
     id: 2,
     title: "Slide 2",
     description: "This is the second slide.",
-    image: HeroImage,
+    image: slide2,
   },
   {
     id: 3,
     title: "Slide 3",
     description: "This is the third slide.",
-    image: HeroImage,
+    image: slide3,
   },
 ];
 
@@ -37,28 +38,27 @@ const slidesData = [
 
 const Hero = () => {
   return (
-    <div className="h-screen md:bg-cover bg-no-repeat w-full relative px-6">
-      {/* Dark Overlay */}
-      {/* Content */}
-      <CustomSlider>
-        {slidesData.map((item, index) => (
+    <CustomSlider>
+      {slidesData.map((item, index) => (
+        <div key={index}>
           <div
             key={index}
-            style={{
-              backgroundImage: `url(${item.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-            className={`w-full h-screen flex flex-col justify-center items-center gap-8 px-4]`}
+            className={`w-full md:h-screen h-[40vh] flex flex-col border-dark-brown relative justify-center items-center gap-4 px-4]`}
           >
-            <h1 className={`${caveat.className} text-5xl text-white`}>
+            <Image
+              src={item.image}
+              alt="hero"
+              fill={true}
+              className="h-full w-full absolute object-cover top-0 left-0 bottom-0 -z-10 right-0 "
+            />
+            {/* <h1 className={`${caveat.className} text-5xl text-primary`}>
               {item.title}
             </h1>
-            <p className="text-white text-lg">{item.description}</p>
+            <p className="text-white text-lg">{item.description}</p> */}
           </div>
-        ))}
-      </CustomSlider>
-    </div>
+        </div>
+      ))}
+    </CustomSlider>
   );
 };
 

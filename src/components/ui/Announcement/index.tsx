@@ -1,16 +1,6 @@
-"use client";
-import { useState } from "react";
 import { BsStars } from "react-icons/bs";
 
 const Announcement = () => {
-  const [isVisible, setIsVisible] = useState(true);
-
-  const handleClose = () => {
-    setIsVisible(false);
-  };
-
-  if (!isVisible) return null;
-
   return (
     <div className="bg-dark-brown text-white text-center py-3 px-5 font-bold relative">
       <p>

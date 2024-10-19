@@ -1,13 +1,21 @@
+import AboutUs from "@/components/Home/AboutUs";
 import Hero from "@/components/Home/Hero";
-import Announcement from "@/components/ui/Announcement";
-import Navbar from "@/components/ui/Navbar";
+import InstagramPostEmbed from "@/components/Home/InstagramPostEmbed";
+import Location from "@/components/Home/Location";
+import Testimonials from "@/components/Home/Testimonials";
+import WhatWeSell from "@/components/Home/WhatWeSell";
+import WinterSpecials from "@/components/Home/Winter";
 
 const Home = () => {
   return (
     <div>
-      <Announcement />
-      <Navbar />
       <Hero />
+      <AboutUs />
+      <WinterSpecials />
+      <WhatWeSell />
+      <Testimonials />
+      <Location />
+      <InstagramPostEmbed url="https://www.instagram.com/oh.shakes" />
     </div>
   );
 };
