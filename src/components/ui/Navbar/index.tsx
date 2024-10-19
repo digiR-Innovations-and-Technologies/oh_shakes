@@ -11,8 +11,8 @@ const Navbar = () => {
   const onCloseModal = () => setIsOpen(false);
   return (
     <>
-      <nav className="w-full top-0 z-50 bg-dark-brown text-white py-4">
-        <div className="container mx-auto flex justify-between md:justify-center gap-2 md:flex-col items-center px-4">
+      <nav className="w-full top-0 z-50 bg-white text-white py-4 px-4">
+        <div className="container mx-auto flex md:justify-center justify-between md:flex-col gap-2 items-center ">
           {/* Logo Section */}
           <div className="flex items-center">
             <Image
@@ -27,14 +27,14 @@ const Navbar = () => {
           </div>
 
           {/* Links Section */}
-          <ul className="md:flex text-light hidden space-x-8">
-            <li className="hover:text-accent-secondary">
+          <ul className="md:flex text-white px-4 py-1 bg-primary rounded-full hidden space-x-8">
+            <li className="hover:text-accent">
               <Link href="/">Home</Link>
             </li>
-            <li className="hover:text-accent-secondary">
+            <li className="hover:text-accent">
               <Link href="/menu">Menu</Link>
             </li>
-            <li className="hover:text-accent-secondary">
+            <li className="hover:text-accent">
               <Link href="/about">About Us</Link>
             </li>
           </ul>
