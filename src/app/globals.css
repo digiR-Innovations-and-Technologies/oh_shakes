@@ -3,21 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #fff8e5;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  letter-spacing: -0.5px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-caveat), cursive; /* Using Caveat for headings */
+}
+
+p,
+body,
+a {
+  font-family: var(--font-nunito), sans-serif; /* Using Nunito for body text */
 }
 
 @layer utilities {
