@@ -1,6 +1,6 @@
 import AboutUs from "@/components/Home/AboutUs";
 import Hero from "@/components/Home/Hero";
-import InstagramPostEmbed from "@/components/Home/InstagramPostEmbed";
+// import InstagramPostEmbed from "@/components/Home/InstagramPostEmbed";
 import Location from "@/components/Home/Location";
 import Testimonials from "@/components/Home/Testimonials";
 import WhatWeSell from "@/components/Home/WhatWeSell";
@@ -15,7 +15,7 @@ const Home = () => {
       <WhatWeSell />
       <Testimonials />
       <Location />
-      <InstagramPostEmbed url="https://www.instagram.com/oh.shakes" />
+      {/* <InstagramPostEmbed url="https://www.instagram.com/oh.shakes" /> */}
     </div>
   );
 };
