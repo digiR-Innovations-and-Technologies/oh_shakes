@@ -95,6 +95,8 @@ const WhatWeSell = () => {
                 src={item.image.toString()}
                 alt={item.name}
                 width={200}
+                loading="eager"
+                rel="preload"
                 height={200}
                 className="w-40 h-40 object-cover aspect-square p-2 border-2 border-primary rounded-full"
               />

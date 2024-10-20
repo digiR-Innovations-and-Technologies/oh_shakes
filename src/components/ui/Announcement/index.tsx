@@ -8,12 +8,6 @@ const Announcement = () => {
         thick shakes, coffee, lassi, sandwiches, and more—made to delight!{" "}
         <BsStars className="inline-block text-accent-secondary" />
       </p>
-      {/* <button
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-lg"
-        onClick={handleClose}
-      >
-        ✕
-      </button> */}
     </div>
   );
 };

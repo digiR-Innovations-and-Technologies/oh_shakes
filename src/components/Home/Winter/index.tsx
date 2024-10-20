@@ -62,7 +62,7 @@ const WinterSpecials = () => {
               whileInView={{
                 opacity: 1,
                 y: 0,
-                scale: 1
+                scale: 1,
               }} // Animate to visible, original position, and scale up
               transition={{
                 duration: 0.7, // Duration of the animation
@@ -74,8 +74,10 @@ const WinterSpecials = () => {
                 src={item.image}
                 alt={item.name}
                 width={300}
-                height={200}
-                className="rounded-md"
+                rel="preload"
+                loading="eager"
+                height={300}
+                className="rounded-md aspect-square object-cover "
               />
               <h3 className="mt-4 text-xl font-semibold">{item.name}</h3>
               <p className="mt-2 text-gray-700">{item.description}</p>

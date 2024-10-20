@@ -45,20 +45,14 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }} // Fade in and move to final position
             transition={{ duration: 0.5 }} // Duration of animation
           >
-            {["/", "/menu", "/about"].map((path, index) => (
+            {["/", "/menu"].map((path, index) => (
               <motion.li
                 key={index}
                 className="hover:text-accent relative"
                 whileHover={{ scale: 1.1 }} // Scale up on hover
                 transition={{ duration: 0.2 }} // Duration of hover effect
               >
-                <Link href={path}>
-                  {path === "/"
-                    ? "Home"
-                    : path === "/menu"
-                    ? "Our Menu"
-                    : "About Us"}
-                </Link>
+                <Link href={path}>{path === "/" ? "Home" : "Our Menu"}</Link>
                 <motion.div
                   className="absolute left-0 right-0 bottom-0 h-1 bg-accent scale-x-0"
                   whileHover={{ scaleX: 1 }} // Scale x to show underline effect
@@ -111,10 +105,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <Sidebar
-        isOpen={isOpen}
-        onClose={onCloseModal}
-      />
+      <Sidebar isOpen={isOpen} onClose={onCloseModal} />
     </>
   );
 };

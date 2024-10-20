@@ -49,6 +49,8 @@ const Hero = () => {
               src={item.image}
               alt="hero"
               fill={true}
+              rel="preload"
+              loading="eager"
               className="h-full w-full absolute object-cover top-0 left-0 bottom-0 -z-10 right-0 "
             />
             {/* <h1 className={`${caveat.className} text-5xl text-primary`}>

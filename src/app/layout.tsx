@@ -1,4 +1,3 @@
-// app/layout.tsx or pages/_app.tsx
 import { Metadata } from "next";
 import "./globals.css"; // If you have global styles
 import { Caveat, Nunito } from "next/font/google";
@@ -6,7 +5,6 @@ import Navbar from "@/components/ui/Navbar";
 import BottomNavbar from "@/components/ui/BottomNavbar";
 import Footer from "@/components/ui/Footer";
 import Announcement from "@/components/ui/Announcement";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 // Import Caveat and Nunito fonts
 export const caveat = Caveat({
@@ -22,8 +20,9 @@ export const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "My Cafe Website",
-  description: "Best coffee in town",
+  title: "Oh Shakes ",
+  description:
+    "Savor our thick shakes, coffee, lassi, sandwiches, and more—made to delight!",
 };
 
 export default function RootLayout({
@@ -34,7 +33,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${caveat.variable} ${nunito.variable}`}>
-        <GoogleAnalytics measurementId={process.env.ANALYTICS_ID!} />
         <main className="pb-[78px] md:pb-0">
           <Announcement />
           <Navbar />

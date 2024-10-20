@@ -35,6 +35,8 @@ const AboutUs = () => {
             src="/images/cafe-about.jpg"
             alt="Cafe Interior"
             width={500}
+            rel="preload"
+            loading="eager"
             height={400}
             className="rounded-lg"
           />
