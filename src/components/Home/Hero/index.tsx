@@ -43,7 +43,7 @@ const Hero = () => {
         <div key={index}>
           <div
             key={index}
-            className={`w-full md:h-screen h-[40vh] flex flex-col border-dark-brown relative justify-center items-center gap-4 px-4]`}
+            className={`w-full lg:h-screen h-[40vh] flex flex-col border-dark-brown relative justify-center items-center gap-4 px-4]`}
           >
             <Image
               src={item.image}

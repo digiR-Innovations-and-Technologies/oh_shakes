@@ -1,5 +1,8 @@
+"use client";
+import React from "react";
 import { FaSnowflake, FaMugHot } from "react-icons/fa";
 import Image from "next/image";
+import { motion } from "framer-motion"; // Import Framer Motion
 
 const WinterSpecials = () => {
   const winterItems = [
@@ -51,10 +54,22 @@ const WinterSpecials = () => {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {winterItems.map((item) => (
-            <div
+          {winterItems.map((item, index) => (
+            <motion.div
               key={item.id}
               className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl flex items-center flex-col transition-shadow relative"
+              initial={{ opacity: 0, y: 20, scale: 0.8 }} // Initial state (hidden and slightly lower)
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                rotate: [0, 5, -5, 0], // Add slight rotation
+              }} // Animate to visible, original position, and scale up
+              transition={{
+                duration: 0.7, // Duration of the animation
+                delay: index * 0.1, // Stagger the animation based on index
+              }}
+              viewport={{ once: true }} // Animation only plays once when in view
             >
               <Image
                 src={item.image}
@@ -70,7 +85,7 @@ const WinterSpecials = () => {
               <div className="absolute top-2 right-2 text-primary text-2xl">
                 <FaMugHot />
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

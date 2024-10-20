@@ -6,6 +6,7 @@ import Navbar from "@/components/ui/Navbar";
 import BottomNavbar from "@/components/ui/BottomNavbar";
 import Footer from "@/components/ui/Footer";
 import Announcement from "@/components/ui/Announcement";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 // Import Caveat and Nunito fonts
 export const caveat = Caveat({
@@ -33,13 +34,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${caveat.variable} ${nunito.variable}`}>
+        <GoogleAnalytics measurementId={process.env.ANALYTICS_ID!} />
         <main className="pb-[78px] md:pb-0">
-          <Announcement/>
-          <Navbar/>
+          <Announcement />
+          <Navbar />
           {children}
-          <BottomNavbar/>
-          <Footer/>
-          </main>
+          <BottomNavbar />
+          <Footer />
+        </main>
       </body>
     </html>
   );

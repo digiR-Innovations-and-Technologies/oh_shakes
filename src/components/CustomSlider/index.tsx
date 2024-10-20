@@ -47,7 +47,7 @@ const CustomSlider: React.FC<SliderFuncProps> = ({ children }) => {
   return (
     <div className="">
       <Slider
-        className="md:h-screen h-1/2 flex items-center justify-center"
+        className="lg:h-screen h-1/2 flex items-center justify-center"
         {...settings}
       >
         {children}

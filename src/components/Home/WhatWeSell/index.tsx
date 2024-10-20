@@ -1,46 +1,75 @@
+"use client"; // Indicate this is a client component
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 // Cafe Item
 const Items = [
   {
-    image: "/images/cappuccino.jpg", // Replace with actual image paths
-    name: "Cappuccino",
+    image: "/images/coffee.png",
+    name: "Coffee",
     description:
-      "A rich and creamy coffee made with espresso and steamed milk, topped with frothy milk foam.",
+      "A smooth blend of espresso and steamed milk, topped with creamy foam.",
   },
   {
-    image: "/images/latte.jpg",
-    name: "Latte",
+    image: "/images/sandwich.jpg",
+    name: "Sandwich",
     description:
-      "Smooth espresso blended with steamed milk and topped with a light layer of milk foam.",
+      "Freshly made with quality ingredients, perfect for a quick bite.",
   },
   {
-    image: "/images/espresso.jpg",
-    name: "Espresso",
+    image: "/images/maggie.png",
+    name: "Maggie",
     description:
-      "A concentrated coffee brewed by forcing hot water through finely-ground coffee beans.",
+      "Delicious noodles, seasoned to perfection for a comforting taste.",
   },
   {
-    image: "/images/americano.jpg",
-    name: "Americano",
+    image: "/images/waffle.jpg",
+    name: "Waffle",
     description:
-      "Espresso diluted with hot water, giving it a similar strength to brewed coffee.",
+      "Fluffy waffles drizzled with syrup, served with fresh fruits.",
   },
   {
-    image: "/images/vanilla-shake.jpg",
-    name: "Vanilla Shake",
+    image: "/images/shakes.jpg",
+    name: "Shakes",
     description:
-      "A creamy blend of vanilla ice cream and milk, topped with whipped cream.",
+      "Creamy shakes blended with rich ice cream for a refreshing treat.",
   },
   {
-    image: "/images/chocolate-shake.jpg",
+    image: "/images/chocolate-shake.png",
     name: "Chocolate Shake",
     description:
-      "Indulge in our thick chocolate shake, made with rich chocolate ice cream and milk.",
+      "Indulgent chocolate shake, finished with whipped cream and drizzle.",
   },
 ];
 
 const WhatWeSell = () => {
+  // Define animation variants
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2, // Stagger child animations
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.8, // Scale down
+      rotate: -10, // Rotate slightly
+    },
+    visible: {
+      opacity: 1,
+      scale: 1, // Scale to original size
+      rotate: 0, // Rotate back to original position
+      transition: {
+        duration: 0.5, // Animation duration
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <div className="px-4 py-12 flex items-center justify-center relative">
       <div className="max-w-screen-xl mx-auto relative z-0">
@@ -49,28 +78,35 @@ const WhatWeSell = () => {
           <h1 className="text-4xl text-dark-brown font-bold">What We Sell</h1>
           <div className="h-[2px] bg-dark-brown flex-1"></div>
         </div>
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-y-8 mt-8">
+        <motion.div
+          className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-y-8 mt-8"
+          initial="hidden"
+          whileInView="visible"
+          variants={containerVariants}
+          viewport={{ once: true }} // Animate only once when in view
+        >
           {Items.map((item, index) => (
-            <div
+            <motion.div
               key={index}
               className="flex md:odd:flex-col odd:flex-row-reverse md:flex-col items-center gap-4 py-6 px-4 md:text-center"
+              variants={itemVariants} // Apply item variants for animation
             >
               <Image
-                src="/images/hero.jpg"
+                src={item.image.toString()}
                 alt={item.name}
                 width={200}
                 height={200}
-                className="w-40 h-40 object-cover border-2 border-primary rounded-full"
+                className="w-40 h-40 object-cover aspect-square p-2 border-2 border-primary rounded-full"
               />
-              <div className="">
+              <div>
                 <h1 className="text-2xl leading-tight">{item.name}</h1>
                 <p className="text-md leading-relaxed mt-2">
                   {item.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
