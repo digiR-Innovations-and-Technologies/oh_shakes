@@ -62,8 +62,7 @@ const WinterSpecials = () => {
               whileInView={{
                 opacity: 1,
                 y: 0,
-                scale: 1,
-                rotate: [0, 5, -5, 0], // Add slight rotation
+                scale: 1
               }} // Animate to visible, original position, and scale up
               transition={{
                 duration: 0.7, // Duration of the animation

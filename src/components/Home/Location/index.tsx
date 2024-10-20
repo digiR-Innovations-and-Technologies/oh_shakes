@@ -11,8 +11,8 @@ const Location = () => {
         {/* Left Section: Details */}
         <motion.div
           className="flex-1 md:w-1/2 mb-8 md:mb-0"
-          initial={{ opacity: 0, x: -50 }} // Start from the left and hidden
-          whileInView={{ opacity: 1, x: 0 }} // Fade in and slide in
+          initial={{ opacity: 0, y: 50 }} // Start from the left and hidden
+          whileInView={{ opacity: 1, y: 0 }} // Fade in and slide in
           transition={{ duration: 0.5 }} // Duration of animation
           viewport={{ once: true }} // Animation plays once when in view
         >
@@ -66,8 +66,8 @@ const Location = () => {
         {/* Right Section: Map */}
         <motion.div
           className="flex-1 md:w-1/2 md:pl-8 w-full"
-          initial={{ opacity: 0, x: 50 }} // Start from the right and hidden
-          whileInView={{ opacity: 1, x: 0 }} // Fade in and slide in
+          initial={{ opacity: 0, y: 50 }} // Start from the right and hidden
+          whileInView={{ opacity: 1, y: 0 }} // Fade in and slide in
           transition={{ duration: 0.5 }} // Duration of animation
           viewport={{ once: true }} // Animation plays once when in view
         >
