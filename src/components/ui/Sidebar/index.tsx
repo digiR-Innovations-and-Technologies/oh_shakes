@@ -35,14 +35,14 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       initial={{ x: "-100%" }}
       animate={{ x: isOpen ? 0 : "-100%" }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="fixed top-0 left-0 w-full h-full bg-dark-brown text-white shadow-lg z-[999] overflow-hidden"
+      className="fixed top-0 left-0 w-full h-full bg-white text-black shadow-lg z-[999] overflow-hidden"
     >
       <div className="relative flex flex-col h-full">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-pattern opacity-10 pointer-events-none"></div>
 
         {/* Header */}
-        <div className="px-6 flex items-center justify-between py-4 border-b border-light relative z-10">
+        <div className="px-6 flex items-center justify-between py-4 border-b relative z-10">
           <div className="flex items-center gap-2">
             <Image
               src="/images/logo.png"
@@ -50,7 +50,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               width={50}
               height={50}
             />
-            <h1 className=" text-3xl text-light font-bold">
+            <h1 className=" text-3xl text-dark-brown font-bold">
               <span className="text-primary">Oh</span> Shakes
             </h1>
           </div>
@@ -73,7 +73,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             <li
               onClick={() => handleNavigate(item.link)}
               key={index}
-              className="flex items-center space-x-3 text-lg text-light hover:text-yellow-300 cursor-pointer transition-colors duration-300"
+              className="flex items-center space-x-3 text-lg text-black hover:text-yellow-300 cursor-pointer transition-colors duration-300"
             >
               <motion.div
                 whileHover={{ scale: 1.2 }}

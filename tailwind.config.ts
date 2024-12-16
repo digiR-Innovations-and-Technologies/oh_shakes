@@ -12,7 +12,7 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "#F79031",
-        "dark-brown": "#6B4226",
+        "dark-brown": "#F79031",
         accent: "#FA3E32",
         light: "#FFF8E5",
         "accent-secondary": "#FFD700",
@@ -22,3 +22,4 @@ const config: Config = {
   plugins: [],
 };
 export default config;
+// #F79031

@@ -1,90 +1,140 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { motion } from "framer-motion";
 import {
-  FaInstagram,
-} from "react-icons/fa";
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Phone,
+  Mail,
+  MapPin,
+} from "lucide-react";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-dark-brown text-white py-12">
-      <div className="max-w-screen-xl mx-auto px-4">
-        <div className="flex flex-col items-center md:flex-row md:justify-between gap-8">
-          {/* Column 1: Logo */}
-          <div className="text-center md:text-left">
-            <Image
-              src="/images/logo.png"
-              alt="Logo"
-              width={150}
-              height={150}
-              className="mx-auto md:mx-0"
-            />
-            <p className="mt-4 text-accent-secondary text-lg leading-relaxed">
-              Your favorite coffee shop, where passion meets perfection.
-            </p>
-          </div>
+    <footer className="bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-12 border-t">
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3 className="font-bold mb-4">Contact Us</h3>
+            <p className="text-gray-600 mb-4">Nothing Before Coffee</p>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-gray-600">
+                <div>
+                <Phone className="w-4 h-4" />
+                </div>
+                <span>
+                  (+91) 9251652986 | 9782485948 | 9251938083 [10 am - 7 pm]
+                </span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-600">
+                <div><Mail className="w-4 h-4" /></div>
+                <span>info@nothingbeforecoffee.com</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-600">
+                <div><MapPin className="w-4 h-4" /></div>
+                <span>
+                  Shop no: 1 & 2, Meena Colony, Kailashpuri, Opp. sanghi Farm,
+                  Durgapura, Jaipur, 302018, Rajasthan
+                </span>
+              </div>
+            </div>
+          </motion.div>
 
-          {/* Column 2: Navigation Links */}
-          <div className="flex flex-col gap-4 text-center md:text-left">
-            <h2 className="text-xl font-semibold text-accent-secondary">
-              Quick Links
-            </h2>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/" className="hover:underline">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/menu" className="hover:underline">
-                  Menu
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3: Contact Info */}
-          <div className="flex flex-col gap-4 text-center md:text-left">
-            <h2 className="text-xl font-semibold text-accent-secondary">
-              Contact Us
-            </h2>
-            <ul className="space-y-2">
-              <li>Station Rd, Kote Gate, Bikaner, Rajasthan 334001</li>
-              <li>Phone: 099293 25262</li>
-            </ul>
-          </div>
-
-          {/* Column 4: Social Media Links */}
-          <div className="flex flex-col gap-4 text-center md:text-left">
-            <h2 className="text-xl font-semibold text-accent-secondary">
-              Follow Us
-            </h2>
-            <div className="flex justify-center md:justify-start space-x-4">
+          {/* Follow Us */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <h3 className="font-bold mb-4">Follow Us</h3>
+            <div className="space-y-2">
               <a
-                href="https://www.instagram.com/oh.shakes/"
-                className="text-primary hover:text-accent-secondary"
+                href="#"
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
               >
-                <FaInstagram size={24} />
+                <Facebook className="w-4 h-4" />
+                Facebook
+              </a>
+              <a
+                href="#"
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
+              >
+                <Twitter className="w-4 h-4" />
+                Twitter
+              </a>
+              <a
+                href="#"
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
+              >
+                <Instagram className="w-4 h-4" />
+                Instagram
+              </a>
+              <a
+                href="#"
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
+              >
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
               </a>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Useful Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h3 className="font-bold mb-4">Useful Links</h3>
+            <div className="space-y-2">
+              {[
+                "About Us",
+                "Locations",
+                "Careers",
+                "Privacy Policy",
+                "Shipping Policy",
+                "Refund Policy",
+                "Term & Conditions",
+                "Contact Us",
+              ].map((link) => (
+                <a
+                  key={link}
+                  href="#"
+                  className="block text-gray-600 hover:text-gray-900"
+                >
+                  {link}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Logo and App Downloads */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <img src="/images/logo.png" alt="NBC Logo" className="mb-6" />
+          </motion.div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="mt-12 border-t border-gray-700 pt-6 text-center">
-          <p className="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} Oh Shakes. All rights reserved.
-          </p>
-          <p className="text-sm text-gray-200 mt-2">
-            Developed by{" "}
-            <a className="font-bold" href="https://digirinnovations.com">
-              Digir Innovations
-            </a>
-            . Designed with love for coffee enthusiasts.
-          </p>
-        </div>
+        {/* Copyright */}
+        <motion.div
+          className="py-6 text-center border-t text-sm text-gray-600"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          © 2024 Oh Shakes. All Rights Reserved.
+        </motion.div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
