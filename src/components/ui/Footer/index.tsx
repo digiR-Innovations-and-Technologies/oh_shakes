@@ -23,26 +23,25 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <h3 className="font-bold mb-4">Contact Us</h3>
-            <p className="text-gray-600 mb-4">Nothing Before Coffee</p>
+            <p className="text-gray-600 mb-4">Oh Shakes</p>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-gray-600">
                 <div>
-                <Phone className="w-4 h-4" />
+                  <Phone className="w-4 h-4" />
                 </div>
-                <span>
-                  (+91) 9251652986 | 9782485948 | 9251938083 [10 am - 7 pm]
-                </span>
+                <span>(+91) 099293 25262</span>
               </div>
               <div className="flex items-center gap-2 text-gray-600">
-                <div><Mail className="w-4 h-4" /></div>
-                <span>info@nothingbeforecoffee.com</span>
+                <div>
+                  <Mail className="w-4 h-4" />
+                </div>
+                <span>info@ohshakes.com</span>
               </div>
               <div className="flex items-center gap-2 text-gray-600">
-                <div><MapPin className="w-4 h-4" /></div>
-                <span>
-                  Shop no: 1 & 2, Meena Colony, Kailashpuri, Opp. sanghi Farm,
-                  Durgapura, Jaipur, 302018, Rajasthan
-                </span>
+                <div>
+                  <MapPin className="w-4 h-4" />
+                </div>
+                <span>Station Rd, Kote Gate, Bikaner, Rajasthan 334001</span>
               </div>
             </div>
           </motion.div>
