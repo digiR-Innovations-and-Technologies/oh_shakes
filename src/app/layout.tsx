@@ -5,6 +5,7 @@ import Navbar from "@/components/ui/Navbar";
 import BottomNavbar from "@/components/ui/BottomNavbar";
 import Footer from "@/components/ui/Footer";
 import Announcement from "@/components/ui/Announcement";
+import TopArrow from "@/components/ui/TopArrow";
 
 // Import Caveat and Nunito fonts
 export const caveat = Caveat({
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${caveat.variable} ${nunito.variable}`}>
         <main className="pb-[78px] md:pb-0">
+          <TopArrow />
           <Announcement />
           <Navbar />
           {children}

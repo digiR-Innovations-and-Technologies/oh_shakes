@@ -11,6 +11,21 @@ const Items = [
       "A smooth blend of espresso and steamed milk, topped with creamy foam.",
   },
   {
+    image: "/images/patties.jpg",
+    name: "Patties",
+    description: "Crispy and golden, perfect for a satisfying bite.",
+  },
+  {
+    image: "/images/nutella.jpg",
+    name: "Nutella",
+    description: "Rich and creamy, perfect for a sweet treat.",
+  },
+  {
+    image: "/images/mocktail.jpg",
+    name: "Mocktail",
+    description: "Refreshing mix of flavors, perfect for a delightful drink",
+  },
+  {
     image: "/images/sandwich.jpg",
     name: "Sandwich",
     description:
@@ -30,7 +45,7 @@ const Items = [
   },
   {
     image: "/images/shakes.jpg",
-    name: "Shakes",
+    name: "Italian Thick Shakes",
     description:
       "Creamy shakes blended with rich ice cream for a refreshing treat.",
   },

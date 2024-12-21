@@ -1,20 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Truck, Coffee } from "lucide-react";
+import { MapPin, DollarSign, Clock, Leaf } from "lucide-react";
+import { BiRupee } from "react-icons/bi";
+import { FaRupeeSign } from "react-icons/fa";
 
 const features = [
   {
     icon: MapPin,
-    title: "EASY APPROACHABILITY & PICK UPS",
+    title: "EASY APPROACHABILITY & PICK-UP",
   },
   {
-    icon: Truck,
-    title: "BEST QUALITY COFFEE AT MINIMUM PRICING",
+    icon: BiRupee,
+    title: "BEST QUALITY THICK SHAKE AT GOOD PRICING",
   },
   {
-    icon: Coffee,
-    title: "TASTY ON-THE-GO COFFEE",
+    icon: Clock,
+    title: "OPEN TILL 12 PM (MIDNIGHT)",
+  },
+  {
+    icon: Leaf,
+    title: "HYGIENIC & FRESH INGREDIENTS",
   },
 ];
 
@@ -32,9 +38,9 @@ export default function Features() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        WE ARE PROVIDE BEST SERVICE IN YOUR CITY
+        WE PROVIDE THE BEST SERVICE IN YOUR CITY
       </motion.p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
         {features.map((feature, index) => (
           <motion.div
             key={index}
@@ -44,8 +50,10 @@ export default function Features() {
           >
             <div className="bg-primary/10 shadow-md rounded-lg overflow-hidden h-full">
               <div className="p-6 flex items-center justify-center flex-col">
-                <feature.icon className="w-12 h-12 mb-4" />
-                <p className=" text-sm">{feature.title}</p>
+                <feature.icon className="w-12 h-12 mb-4 text-dark-brown" />
+                <p className="text-center text-sm font-medium text-gray-800">
+                  {feature.title}
+                </p>
               </div>
             </div>
           </motion.div>

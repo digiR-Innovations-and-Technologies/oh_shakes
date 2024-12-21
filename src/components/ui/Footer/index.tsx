@@ -10,6 +10,26 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
+import Link from "next/link";
+
+const usefulLinks = [
+  {
+    title: "About Us",
+    href: "/about",
+  },
+  {
+    title: "Contact Us",
+    href: "/contact",
+  },
+  {
+    title: "Careers",
+    href: "/careers",
+  },
+  {
+    title: "Blogs",
+    href: "/blogs",
+  },
+];
 
 export default function Footer() {
   return (
@@ -35,7 +55,7 @@ export default function Footer() {
                 <div>
                   <Mail className="w-4 h-4" />
                 </div>
-                <span>info@ohshakes.com</span>
+                <span>ohshakes6999@gmail.com</span>
               </div>
               <div className="flex items-center gap-2 text-gray-600">
                 <div>
@@ -93,23 +113,14 @@ export default function Footer() {
           >
             <h3 className="font-bold mb-4">Useful Links</h3>
             <div className="space-y-2">
-              {[
-                "About Us",
-                "Locations",
-                "Careers",
-                "Privacy Policy",
-                "Shipping Policy",
-                "Refund Policy",
-                "Term & Conditions",
-                "Contact Us",
-              ].map((link) => (
-                <a
-                  key={link}
-                  href="#"
+              {usefulLinks.map((link) => (
+                <Link
+                  key={link.title}
+                  href={link.href}
                   className="block text-gray-600 hover:text-gray-900"
                 >
-                  {link}
-                </a>
+                  {link.title}
+                </Link>
               ))}
             </div>
           </motion.div>
