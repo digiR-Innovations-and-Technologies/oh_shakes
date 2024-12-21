@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, DollarSign, Clock, Leaf } from "lucide-react";
+import { MapPin,  Clock, Leaf } from "lucide-react";
 import { BiRupee } from "react-icons/bi";
-import { FaRupeeSign } from "react-icons/fa";
 
 const features = [
   {

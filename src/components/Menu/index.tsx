@@ -400,7 +400,7 @@ const Menu = () => {
 
         {/* Menu Sections */}
         {filteredMenuData.length > 0 ? (
-          filteredMenuData.map((section, index) => (
+          filteredMenuData.map((section) => (
             <motion.section
               key={section.category}
               className="mb-12"
@@ -430,7 +430,7 @@ const Menu = () => {
           ))
         ) : (
           <div className="text-center text-gray-600">
-            No items found for "{searchTerm}"
+            No items found for {searchTerm}
           </div>
         )}
       </div>
