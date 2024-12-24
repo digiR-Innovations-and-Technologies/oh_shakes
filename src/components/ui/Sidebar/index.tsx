@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { FiHome, FiCoffee} from "react-icons/fi";
+import { FiHome, FiCoffee, FiPhone } from "react-icons/fi";
+import { GoBook } from "react-icons/go";
 import { RxCross2 } from "react-icons/rx";
 
 interface SidebarProps {
@@ -67,8 +68,12 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           {[
             { label: "Home", icon: <FiHome />, link: "/" },
             { label: "Menu", icon: <FiCoffee />, link: "/menu" },
-            // { label: "About Us", icon: <FiInfo /> },
-            // { label: "Contact Us", icon: <FiPhone /> },
+            { label: "Contact Us", icon: <FiPhone />, link: "/contact" },
+            {
+              label: "Blogs",
+              icon: <GoBook />,
+              link: "/blogs",
+            },
           ].map((item, index) => (
             <li
               onClick={() => handleNavigate(item.link)}

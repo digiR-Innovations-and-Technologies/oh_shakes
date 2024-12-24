@@ -10,6 +10,7 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const usefulLinks = [
@@ -131,7 +132,13 @@ export default function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <img src="/images/logo.png" alt="NBC Logo" className="mb-6" />
+            <Image
+              width={100}
+              height={100}
+              src="/images/logo.png"
+              alt="NBC Logo"
+              className="mb-6"
+            />
           </motion.div>
         </div>
 

@@ -65,14 +65,19 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {["/", "/menu"].map((path, index) => (
+            {[
+              { path: "/", label: "Home" },
+              { path: "/menu", label: "Our Menu" },
+              { path: "/contact", label: "Contact" },
+              { path: "/blogs", label: "Blogs" },
+            ].map((link, index) => (
               <motion.li
                 key={index}
                 className="hover:text-accent relative"
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.2 }}
               >
-                <Link href={path}>{path === "/" ? "Home" : "Our Menu"}</Link>
+                <Link href={link.path}>{link.label}</Link>
                 <motion.div
                   className="absolute left-0 right-0 bottom-0 h-1 bg-accent scale-x-0"
                   whileHover={{ scaleX: 1 }}
