@@ -23,26 +23,26 @@ const AboutUs = () => {
 
   return (
     <section className="py-12 px-4 bg-light-brown">
-      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+      <div className="max-w-screen-xl mx-auto flex flex-col-reverse md:flex-row gap-8 ">
         <motion.div
-          className="md:w-1/2"
+          className=""
           initial="hidden"
           whileInView="visible"
           variants={variants}
           viewport={{ once: true }} // Only animate once when in view
         >
           <Image
-            src="/images/cafe-about.jpg"
+            src="/images/shop2.jpeg"
             alt="Cafe Interior"
             width={500}
             rel="preload"
             loading="eager"
-            height={400}
+            height={350}
             className="rounded-lg"
           />
         </motion.div>
         <motion.div
-          className="md:w-1/2 text-center md:text-left"
+          className="md:w-1/2 text-center md:text-left w-full"
           initial="hidden"
           whileInView="visible"
           variants={variants}
@@ -53,8 +53,12 @@ const AboutUs = () => {
             At Oh Shakes, we believe in crafting the perfect cup for each
             customer. Our journey started 10 years ago, and since then, we’ve
             been passionate about serving the finest coffee in a cozy, welcoming
-            environment. Join us for a unique experience that blends tradition
-            with modern flavors.
+            environment.
+            <br /> <br />
+            Over the years, we’ve expanded our menu to include a variety of
+            beverages and desserts, each crafted with the same attention to
+            quality and flavor. Whether you&apos;re starting your day or winding
+            down, Oh Shakes is the perfect spot to relax and enjoy.
           </p>
         </motion.div>
       </div>

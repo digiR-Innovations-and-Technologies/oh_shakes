@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
 import { BsInstagram } from "react-icons/bs";
-import { CgCoffee } from "react-icons/cg";
+import {  CgShoppingCart } from "react-icons/cg";
 import { SiSwiggy, SiZomato } from "react-icons/si";
 import { motion } from "framer-motion"; // Import Framer Motion
 
 const data = [
   {
-    icon: <CgCoffee />,
-    text: "Our Menu",
-    link: "/menu",
+    icon: <CgShoppingCart />,
+    text: "Order Now",
+    link: "https://wa.me/+919929325262",
   },
   {
     icon: <BsInstagram />,

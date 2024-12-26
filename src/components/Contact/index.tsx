@@ -4,7 +4,7 @@ import { FaMapMarkerAlt, FaClipboardCheck, FaPhoneAlt } from "react-icons/fa";
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="max-w-screen-xl mx-auto px-4 py-12">
       <div className="grid lg:grid-cols-2 gap-6 items-start max-w-6xl mx-auto">
         {/* Left Column */}
         <motion.div
@@ -14,7 +14,7 @@ export default function ContactPage() {
           viewport={{ once: true }} // Animation plays once when in view
         >
           {/* Section Heading */}
-          <div className="flex items-center gap-2 md:w-3/4 mb-6 mx-auto md:mx-0">
+          <div className="flex items-center gap-2  mb-6 mx-auto md:mx-0">
             <div className="h-[2px] bg-dark-brown flex-1"></div>
             <h1 className="text-4xl text-dark-brown font-bold text-center md:text-left">
               Contact Us

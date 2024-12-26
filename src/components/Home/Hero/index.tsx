@@ -1,67 +1,125 @@
+"use client";
+
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Thumbs, Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+import "swiper/css/pagination";
 import Image from "next/image";
-import CustomSlider from "@/components/CustomSlider";
-import slide1 from "../../../../public/images/slide1.jpg";
-import slide2 from "../../../../public/images/slide2.jpg";
-import slide3 from "../../../../public/images/slide3.jpg";
+import { motion } from "framer-motion";
 
-const slidesData = [
-  {
-    id: 1,
-    title: "Slide 1",
-    description: "This is the first slide.",
-    image: slide1,
-  },
-  {
-    id: 2,
-    title: "Slide 2",
-    description: "This is the second slide.",
-    image: slide2,
-  },
-  {
-    id: 3,
-    title: "Slide 3",
-    description: "This is the third slide.",
-    image: slide3,
-  },
-];
 
-// const Slide = ({ slide }: { slide: (typeof slidesData)[0] }) => {
-//   return (
-//     <div className="h-full flex flex-col justify-center items-center gap-8 px-4">
-//       <h1 className={`${caveat.className} text-5xl text-white`}>
-//         {slide.title}
-//       </h1>
-//       <p className="text-white text-lg">{slide.description}</p>
-//     </div>
-//   );
-// };
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const Hero = () => {
+export const LeftArrow = () => {
   return (
-    <CustomSlider>
-      {slidesData.map((item, index) => (
-        <div key={index}>
-          <div
-            key={index}
-            className={`w-full lg:h-screen h-[40vh] flex flex-col border-dark-brown relative justify-center items-center gap-4 px-4]`}
-          >
-            <Image
-              src={item.image}
-              alt="hero"
-              fill={true}
-              rel="preload"
-              loading="eager"
-              className="h-full w-full absolute object-cover top-0 left-0 bottom-0 -z-10 right-0 "
-            />
-            {/* <h1 className={`${caveat.className} text-5xl text-primary`}>
-              {item.title}
-            </h1>
-            <p className="text-white text-lg">{item.description}</p> */}
-          </div>
-        </div>
-      ))}
-    </CustomSlider>
+    <div className="custom-prev  select-none text-white absolute top-[50%] left-4 z-50 hidden md:flex items-center justify-center w-12 h-12 bg-primary rounded-full shadow-lg cursor-pointer hover:bg-black/70 transition">
+      <FaChevronLeft className="text-xl" />
+    </div>
   );
 };
 
-export default Hero;
+export const RightArrow = () => {
+  return (
+    <div className="custom-next select-none text-white absolute top-[50%] right-4 z-50 hidden md:flex items-center justify-center w-12 h-12 bg-primary rounded-full shadow-lg cursor-pointer hover:bg-black/70 transition">
+      <FaChevronRight className="text-xl" />
+    </div>
+  );
+};
+
+function VariableWidthSwiper() {
+  return (
+    <div className=" w-full ">
+      {/* Main Slider */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="mt-2 "
+      >
+        <Swiper
+          modules={[Navigation, Thumbs, Autoplay, Pagination]}
+          navigation={{
+            nextEl: ".custom-next",
+            prevEl: ".custom-prev",
+          }}
+          centeredSlides={true}
+          slidesPerView="auto"
+          spaceBetween={30}
+          autoplay={{
+            delay: 3000,
+          }}
+          pagination={true}
+          breakpoints={{}}
+          loop={true}
+          className="h-[300px] md:h-[650px] w-full"
+        >
+          <SwiperSlide
+            style={{ width: "auto" }}
+            className="flex items-center justify-center"
+          >
+            <div className="h-full w-auto">
+              <Image
+                src={"/images/hero/image1.jpeg"}
+                alt="image 1"
+                width={800}
+                height={400}
+                className="object-cover h-full w-auto rounded-lg"
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide
+            style={{ width: "auto" }}
+            className="flex items-center justify-center"
+          >
+            <div className="h-full w-auto">
+              <Image
+                src={"/images/hero/image2.jpeg"}
+                alt="image 2"
+                width={800}
+                height={400}
+                className="object-cover h-full w-auto rounded-lg"
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide
+            style={{ width: "auto" }}
+            className="flex items-center justify-center"
+          >
+            <div className="h-full w-auto">
+              <Image
+                src={"/images/hero/image3.jpeg"}
+                alt="image 3"
+                width={800}
+                height={400}
+                className="object-cover h-full w-auto rounded-lg"
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide
+            style={{ width: "auto" }}
+            className="flex items-center justify-center"
+          >
+            <div className="h-full w-auto">
+              <Image
+                src={"/images/hero/image4.jpeg"}
+                alt="image 3"
+                width={800}
+                height={400}
+                className="object-cover h-full w-auto rounded-lg"
+              />
+            </div>
+          </SwiperSlide>
+
+          <LeftArrow />
+          <RightArrow />
+        </Swiper>
+      </motion.div>
+    </div>
+  );
+}
+
+export default VariableWidthSwiper;

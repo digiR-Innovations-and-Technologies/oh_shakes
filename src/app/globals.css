@@ -15,6 +15,9 @@ body {
   box-sizing: border-box;
   letter-spacing: -0.5px;
 }
+.swiper-pagination-bullet-active {
+  background-color: #df7234 !important;
+}
 
 h1,
 h2,
@@ -34,22 +37,4 @@ a {
   }
 
   /* Custom styles for dots */
-  .slick-dots.custom-dots {
-    bottom: -25px; /* Position the dots as you like */
-  }
-
-  .slick-dots.custom-dots li button:before {
-    font-size: 12px; /* Change size of dots */
-    color: #c9c7c7; /* Default color of dots */
-    opacity: 1; /* Ensure the dots are fully visible */
-  }
-
-  .slick-dots.custom-dots li.slick-active button:before {
-    color: #f79031; /* Color of the active dot */
-    font-size: 14px; /* Size of active dot */
-  }
-
-  .slick-dots.custom-dots li button:hover:before {
-    color: #f79031; /* Color on hover */
-  }
 }
