@@ -10,7 +10,7 @@ import WinterSpecials from "@/components/Home/Winter";
 
 const Home = () => {
   return (
-    <div>
+    <div className="container mx-auto">
       <Hero />
       <AboutUs />
       <WinterSpecials />

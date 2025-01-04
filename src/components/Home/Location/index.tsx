@@ -7,7 +7,7 @@ import { motion } from "framer-motion"; // Import Framer Motion
 const Location = () => {
   return (
     <section className="py-12 px-4 bg-light-brown">
-      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between md:items-start items-center">
+      <div className=" flex flex-col md:flex-row justify-between md:items-start items-center">
         {/* Left Section: Details */}
         <motion.div
           className="flex-1 md:w-1/2 mb-8 md:mb-0"

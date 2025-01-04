@@ -4,14 +4,14 @@ import { FaMapMarkerAlt, FaClipboardCheck, FaPhoneAlt } from "react-icons/fa";
 
 export default function ContactPage() {
   return (
-    <div className="max-w-screen-xl mx-auto px-4 py-12">
-      <div className="grid lg:grid-cols-2 gap-6 items-start max-w-6xl mx-auto">
+    <div className="container mx-auto px-4 py-12">
+      <div className="grid lg:grid-cols-2 md:gap-24 gap-6 ">
         {/* Left Column */}
         <motion.div
           initial={{ opacity: 0, y: 50 }} // Start from the left and hidden
           whileInView={{ opacity: 1, y: 0 }} // Fade in and slide in
           transition={{ duration: 0.5 }} // Duration of animation
-          viewport={{ once: true }} // Animation plays once when in view
+          viewport={{ once: true }}
         >
           {/* Section Heading */}
           <div className="flex items-center gap-2  mb-6 mx-auto md:mx-0">
@@ -110,7 +110,7 @@ export default function ContactPage() {
 
             <div className="space-y-4">
               <div className="mt-8">
-                <button className="bg-primary text-white py-2 px-6 rounded-full shadow-lg hover:bg-accent-secondary transition-colors">
+                <button className="bg-primary text-white py-2 px-6 rounded-full shadow-lg hover:bg-accent transition-colors">
                   Send Message
                 </button>
               </div>

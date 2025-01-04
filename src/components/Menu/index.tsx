@@ -387,12 +387,12 @@ const Menu = () => {
 
   return (
     <div className="px-6 py-12 bg-gradient-to-br min-h-[60vh] from-white via-light-pink to-light-yellow">
-      <div className="max-w-screen-xl mx-auto">
+      <div className="container mx-auto">
         {/* Header */}
         <div className="flex items-center justify-center gap-4 mb-12">
-          <div className="h-[2px] bg-dark-brown flex-1"></div>
+          <div className="h-[2px] bg-dark-brown flex-1 max-w-[200px]"></div>
           <h1 className="text-5xl font-extrabold text-dark-brown">Our Menu</h1>
-          <div className="h-[2px] bg-dark-brown flex-1"></div>
+          <div className="h-[2px] bg-dark-brown flex-1 max-w-[200px]"></div>
         </div>
 
         {/* Search Input */}

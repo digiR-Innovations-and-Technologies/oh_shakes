@@ -44,7 +44,7 @@ const WinterSpecials = () => {
         />
       </div>
 
-      <div className="max-w-screen-xl mx-auto px-4 relative">
+      <div className=" px-4 relative">
         <h2 className="text-4xl font-bold text-dark-brown mb-6">
           Winter Specials
         </h2>
@@ -91,7 +91,7 @@ const WinterSpecials = () => {
         </div>
 
         <div className="mt-8">
-          <button className="bg-primary text-white py-2 px-6 rounded-full shadow-lg hover:bg-accent-secondary transition-colors">
+          <button className="bg-primary text-white py-2 px-6 rounded-full shadow-lg hover:bg-accent transition-colors">
             Explore Our Winter Menu
           </button>
         </div>

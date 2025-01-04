@@ -23,8 +23,8 @@ const usefulLinks = [
     href: "/contact",
   },
   {
-    title: "Careers",
-    href: "/careers",
+    title: "Own Franchise",
+    href: "/franchise",
   },
   {
     title: "Blogs",
@@ -34,9 +34,9 @@ const usefulLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-12 border-t">
+    <footer className="bg-gray-50 flex items-center justify-center border-t">
+      <div className="px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-12 ">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

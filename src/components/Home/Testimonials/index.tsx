@@ -12,7 +12,7 @@ export default function Testimonials() {
         </h1>
         <div className="h-[2px] bg-dark-brown flex-1"></div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 mt-8 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 mt-8 gap-8 ">
         {Array(3)
           .fill(0)
           .map((_, index) => (

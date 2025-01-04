@@ -2,7 +2,7 @@ export const blogsData = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+      "/images/logo.png",
     title: "The Story of Oh Shakes",
     content: [
       {
@@ -60,7 +60,7 @@ export const blogsData = [
   {
     id: 2,
     image:
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800",
+      "/images/shop2.jpeg",
     title: "Why Shakes Are the Heart of Our Menu",
     content: [
       {

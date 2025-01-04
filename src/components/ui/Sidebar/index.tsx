@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { FiHome, FiCoffee, FiPhone } from "react-icons/fi";
 import { GoBook } from "react-icons/go";
+import { IoCafe } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 
 interface SidebarProps {
@@ -74,11 +75,16 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               icon: <GoBook />,
               link: "/blogs",
             },
+            {
+              label: "Own Franchise",
+              icon: <IoCafe />,
+              link: "/franchise",
+            },
           ].map((item, index) => (
             <li
               onClick={() => handleNavigate(item.link)}
               key={index}
-              className="flex items-center space-x-3 text-lg text-black hover:text-yellow-300 cursor-pointer transition-colors duration-300"
+              className="flex items-center space-x-3 text-lg text-black hover:text-accent cursor-pointer transition-colors duration-300"
             >
               <motion.div
                 whileHover={{ scale: 1.2 }}

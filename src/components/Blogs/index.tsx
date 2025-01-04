@@ -8,7 +8,7 @@ const Blogs = () => {
   const router = useRouter();
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-12">
       {/* Page Header */}
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold text-dark-brown mb-4">Our Blogs</h1>
@@ -26,12 +26,11 @@ const Blogs = () => {
             className="border rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden"
           >
             {/* Blog Image */}
-            <div className="relative w-full h-52">
+            <div className="relative w-full bg-gray-100 p-4 aspect-square">
               <Image
                 src={blog.image}
                 alt={blog.title}
-                layout="fill"
-                objectFit="cover"
+                fill
                 className="rounded-t-lg"
               />
             </div>

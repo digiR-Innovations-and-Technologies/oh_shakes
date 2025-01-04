@@ -87,7 +87,7 @@ const WhatWeSell = () => {
 
   return (
     <div className="px-4 py-12 flex items-center justify-center relative">
-      <div className="max-w-screen-xl mx-auto relative z-0">
+      <div className=" relative z-0">
         <div className="flex items-center gap-4 md:w-1/2 mx-auto">
           <div className="h-[2px] bg-dark-brown flex-1"></div>
           <h1 className="text-4xl text-dark-brown font-bold">What We Sell</h1>

@@ -26,15 +26,16 @@ const BlogDetailPage = ({ params }: { params: { id: string } }) => {
   }
 
   return (
-    <div className=" px-4 md:px-6 py-12">
-      <div className="flex flex-col items-center w-full mx-auto">
-        <Image
-          src={blog.image}
-          alt={blog.title}
-          width={1000}
-          height={1000}
-          className="rounded-xl shadow-lg h-[60vh] w-full mb-8"
-        />
+    <div className="px-4 md:px-6 py-12">
+      <div className="max-w-screen-xl mx-auto flex flex-col items-center w-full">
+        <div className="h-40 aspect-square relative mb-8">
+          <Image
+            src={blog.image}
+            alt={blog.title}
+            fill
+            className="rounded-xl w-full h-full object-cover  "
+          />
+        </div>
         <h1 className="text-4xl font-extrabold text-dark-brown text-center mb-6">
           {blog.title}
         </h1>

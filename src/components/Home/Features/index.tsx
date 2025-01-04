@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin,  Clock, Leaf } from "lucide-react";
+import { MapPin, Clock, Leaf } from "lucide-react";
 import { BiRupee } from "react-icons/bi";
 
 const features = [
@@ -39,7 +39,7 @@ export default function Features() {
       >
         WE PROVIDE THE BEST SERVICE IN YOUR CITY
       </motion.p>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 ">
         {features.map((feature, index) => (
           <motion.div
             key={index}
@@ -48,7 +48,7 @@ export default function Features() {
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <div className="bg-primary/10 shadow-md rounded-lg overflow-hidden h-full">
-              <div className="p-6 flex items-center justify-center flex-col">
+              <div className="p-8 flex items-center justify-center flex-col">
                 <feature.icon className="w-12 h-12 mb-4 text-dark-brown" />
                 <p className="text-center text-sm font-medium text-gray-800">
                   {feature.title}

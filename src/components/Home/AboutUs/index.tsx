@@ -23,7 +23,7 @@ const AboutUs = () => {
 
   return (
     <section className="py-12 px-4 bg-light-brown">
-      <div className="max-w-screen-xl mx-auto flex flex-col-reverse md:flex-row gap-8 ">
+      <div className="flex flex-col-reverse md:flex-row gap-8 ">
         <motion.div
           className=""
           initial="hidden"
