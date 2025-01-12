@@ -57,7 +57,7 @@ const Location = () => {
           {/* About the Cafe */}
           <h2 className="text-2xl font-bold mb-2">About Our Cafe</h2>
           <p className="text-lg md:text-md">
-            At our cafe, we serve quality coffee and pastries in a welcoming
+            At our cafe, we serve quality coffee and shakes in a welcoming
             atmosphere. Whether you need a quiet spot to work, catch up with
             friends, or enjoy a delicious cup of coffee, we’ve got you covered!
           </p>

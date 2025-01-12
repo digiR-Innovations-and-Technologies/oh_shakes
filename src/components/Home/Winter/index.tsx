@@ -8,24 +8,23 @@ import { useRouter } from "next/navigation";
 const winterItems = [
   {
     id: 1,
-    name: "Peppermint Mocha",
-    image: "/images/peppermint-mocha.jpg",
+    name: "Tiramisu Latte",
+    image: "/images/tiramisu-latte.jpg",
     description:
-      "A rich blend of chocolate and espresso with a hint of peppermint, topped with whipped cream. Perfect for warming up on a cold day.",
+      "Indulge in the classic Italian dessert with a latte. Layers of espresso-soaked ladyfingers and mascarpone cream, topped with cocoa powder",
   },
   {
     id: 2,
-    name: "Gingerbread Latte",
-    image: "/images/gingerbread-latte.jpg",
-    description:
-      "Enjoy the flavors of gingerbread in a latte. Warm spices combined with espresso and steamed milk for a seasonal delight.",
+    image: "/images/nutella.jpg",
+    name: "Hot Nutella",
+    description: "Rich and creamy, perfect for a sweet treat.",
   },
   {
     id: 3,
-    name: "Hot Chocolate",
-    image: "/images/hot-chocolate.jpg",
+    name: "Affogato",
+    image: "/images/affogato.jpg",
     description:
-      "Classic hot chocolate topped with marshmallows, perfect for a cozy evening at the cafe.",
+      "Espresso poured over a scoop of vanilla gelato. A delightful combination of coffee and ice cream.",
   },
 ];
 
@@ -80,7 +79,7 @@ const WinterSpecials = () => {
                 rel="preload"
                 loading="eager"
                 height={300}
-                className="rounded-md aspect-square object-cover "
+                className="rounded-md  aspect-square object-cover "
               />
               <h3 className="mt-4 text-xl font-semibold">{item.name}</h3>
               <p className="mt-2 text-gray-700">{item.description}</p>

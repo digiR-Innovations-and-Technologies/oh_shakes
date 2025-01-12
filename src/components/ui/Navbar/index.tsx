@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { FiMenu } from "react-icons/fi";
 import Sidebar from "../Sidebar";
@@ -47,14 +46,8 @@ const Navbar = () => {
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3 }}
           >
-            <Image
-              src="/images/logo.png"
-              alt="Cafe Logo"
-              width={50}
-              height={50}
-            />
-            <h1 className="ml-3 text-3xl text-dark-brown font-bold">
-              <span className="text-primary">Oh</span> Shakes
+            <h1 className="ml-3 text-3xl text-primary font-extrabold stroke-2">
+              Oh Shakes
             </h1>
           </motion.div>
 

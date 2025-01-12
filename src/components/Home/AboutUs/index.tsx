@@ -51,9 +51,8 @@ const AboutUs = () => {
           <h2 className="text-3xl font-bold text-dark-brown">Our Story</h2>
           <p className="mt-4 text-lg leading-relaxed">
             At Oh Shakes, we believe in crafting the perfect cup for each
-            customer. Our journey started 10 years ago, and since then, we’ve
-            been passionate about serving the finest coffee in a cozy, welcoming
-            environment.
+            customer. we’ve been passionate about serving the finest coffee in a
+            cozy, welcoming environment.
             <br /> <br />
             Over the years, we’ve expanded our menu to include a variety of
             beverages and desserts, each crafted with the same attention to

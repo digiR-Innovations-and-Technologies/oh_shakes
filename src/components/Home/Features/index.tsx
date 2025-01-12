@@ -7,7 +7,7 @@ import { BiRupee } from "react-icons/bi";
 const features = [
   {
     icon: MapPin,
-    title: "EASY APPROACHABILITY & PICK-UP",
+    title: "FAST SPECIAL GLUTEN FREE OPTIONS ARE AVAILABLE",
   },
   {
     icon: BiRupee,

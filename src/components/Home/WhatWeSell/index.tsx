@@ -5,20 +5,22 @@ import { motion } from "framer-motion";
 // Cafe Item
 const Items = [
   {
+    image: "/images/shakes.jpg",
+    name: "Italian Thick Shakes",
+    description:
+      "Creamy shakes blended with rich ice cream for a refreshing treat.",
+  },
+  {
     image: "/images/coffee.png",
     name: "Coffee",
     description:
       "A smooth blend of espresso and steamed milk, topped with creamy foam.",
   },
   {
-    image: "/images/patties.jpg",
-    name: "Patties",
-    description: "Crispy and golden, perfect for a satisfying bite.",
-  },
-  {
-    image: "/images/nutella.jpg",
-    name: "Nutella",
-    description: "Rich and creamy, perfect for a sweet treat.",
+    image: "/images/waffle.jpg",
+    name: "Waffle",
+    description:
+      "Fluffy waffles drizzled with syrup, served with fresh fruits.",
   },
   {
     image: "/images/mocktail.jpg",
@@ -27,7 +29,7 @@ const Items = [
   },
   {
     image: "/images/sandwich.jpg",
-    name: "Sandwich",
+    name: "Grill Sandwich",
     description:
       "Freshly made with quality ingredients, perfect for a quick bite.",
   },
@@ -38,22 +40,14 @@ const Items = [
       "Delicious noodles, seasoned to perfection for a comforting taste.",
   },
   {
-    image: "/images/waffle.jpg",
-    name: "Waffle",
-    description:
-      "Fluffy waffles drizzled with syrup, served with fresh fruits.",
+    image: "/images/patties.jpg",
+    name: "Patties",
+    description: "Crispy and golden, perfect for a satisfying bite.",
   },
   {
-    image: "/images/shakes.jpg",
-    name: "Italian Thick Shakes",
-    description:
-      "Creamy shakes blended with rich ice cream for a refreshing treat.",
-  },
-  {
-    image: "/images/chocolate-shake.png",
-    name: "Chocolate Shake",
-    description:
-      "Indulgent chocolate shake, finished with whipped cream and drizzle.",
+    image: "/images/nutella.jpg",
+    name: "Hot Nutella",
+    description: "Rich and creamy, perfect for a sweet treat.",
   },
 ];
 
@@ -90,7 +84,7 @@ const WhatWeSell = () => {
       <div className=" relative z-0">
         <div className="flex items-center gap-4 md:w-1/2 mx-auto">
           <div className="h-[2px] bg-dark-brown flex-1"></div>
-          <h1 className="text-4xl text-dark-brown font-bold">What We Sell</h1>
+          <h1 className="text-4xl text-dark-brown font-bold">What We Offer</h1>
           <div className="h-[2px] bg-dark-brown flex-1"></div>
         </div>
         <motion.div

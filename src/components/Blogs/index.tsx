@@ -19,30 +19,30 @@ const Blogs = () => {
       </div>
 
       {/* Blog Cards */}
-      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {blogsData.map((blog) => (
           <div
-            key={blog.id}
-            className="border rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden"
+            key={blog.title}
+            className="border rounded-lg p-2 shadow-md hover:shadow-lg transition-shadow overflow-hidden"
           >
             {/* Blog Image */}
-            <div className="relative w-full bg-gray-100 p-4 aspect-square">
+            <div className=" aspect-square relative  bg-gray-50  ">
               <Image
                 src={blog.image}
                 alt={blog.title}
                 fill
-                className="rounded-t-lg"
+                className="rounded-t-lg h-full w-full"
               />
             </div>
 
             {/* Blog Content */}
             <div className="p-4">
-              <h2 className="text-2xl font-semibold text-dark-brown mb-2">
+              <p className="text-lg font-semibold text-black mb-2">
                 {blog.title}
-              </h2>
+              </p>
 
               <button
-                onClick={() => router.push(`/blogs/${blog.id}`)}
+                onClick={() => router.push(`/blogs/${blog.link}`)}
                 className="bg-primary text-white px-4 py-2 rounded hover:bg-accent transition"
               >
                 Read More

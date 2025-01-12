@@ -31,9 +31,21 @@ const Franchise = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (
+      !process.env.NEXT_PUBLIC_SERVICE_ID ||
+      !process.env.NEXT_PUBLIC_FRANCHISE_TEMPLATE_ID ||
+      !process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    ) {
+      console.error("Missing EmailJS environment variables.");
+      toast.error("Configuration error. Please try again later.");
+      return;
+    }
+
     try {
       setLoading(true);
-      console.log(formData);
+
+      // Sending email through EmailJS
       await emailjs.send(
         process.env.NEXT_PUBLIC_SERVICE_ID!,
         process.env.NEXT_PUBLIC_FRANCHISE_TEMPLATE_ID!,
@@ -45,6 +57,8 @@ const Franchise = () => {
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
+
+      toast.success("Message sent successfully!");
       setIsSuccessModalOpen(true);
       setFormData({ name: "", email: "", address: "", driveLink: "" });
     } catch (error) {
@@ -54,6 +68,7 @@ const Franchise = () => {
       setLoading(false);
     }
   };
+
   return (
     <div className="bg-white text-gray-900 font-sans">
       <div className="max-w-screen-xl mx-auto p-6 space-y-12">
