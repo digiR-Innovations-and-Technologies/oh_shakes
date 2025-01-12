@@ -24,7 +24,7 @@ const data = [
   {
     icon: <SiZomato />,
     text: "Zomato",
-    link: "https://zomato.onelink.me/xqzv/6f9flr7g",
+    link: "https://link.zomato.com/xqzv/rshare?id=94994719305639af",
   },
 ];
 

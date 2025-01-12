@@ -3,31 +3,34 @@ import React from "react";
 import { FaSnowflake, FaMugHot } from "react-icons/fa";
 import Image from "next/image";
 import { motion } from "framer-motion"; // Import Framer Motion
+import { useRouter } from "next/navigation";
+
+const winterItems = [
+  {
+    id: 1,
+    name: "Peppermint Mocha",
+    image: "/images/peppermint-mocha.jpg",
+    description:
+      "A rich blend of chocolate and espresso with a hint of peppermint, topped with whipped cream. Perfect for warming up on a cold day.",
+  },
+  {
+    id: 2,
+    name: "Gingerbread Latte",
+    image: "/images/gingerbread-latte.jpg",
+    description:
+      "Enjoy the flavors of gingerbread in a latte. Warm spices combined with espresso and steamed milk for a seasonal delight.",
+  },
+  {
+    id: 3,
+    name: "Hot Chocolate",
+    image: "/images/hot-chocolate.jpg",
+    description:
+      "Classic hot chocolate topped with marshmallows, perfect for a cozy evening at the cafe.",
+  },
+];
 
 const WinterSpecials = () => {
-  const winterItems = [
-    {
-      id: 1,
-      name: "Peppermint Mocha",
-      image: "/images/peppermint-mocha.jpg",
-      description:
-        "A rich blend of chocolate and espresso with a hint of peppermint, topped with whipped cream. Perfect for warming up on a cold day.",
-    },
-    {
-      id: 2,
-      name: "Gingerbread Latte",
-      image: "/images/gingerbread-latte.jpg",
-      description:
-        "Enjoy the flavors of gingerbread in a latte. Warm spices combined with espresso and steamed milk for a seasonal delight.",
-    },
-    {
-      id: 3,
-      name: "Hot Chocolate",
-      image: "/images/hot-chocolate.jpg",
-      description:
-        "Classic hot chocolate topped with marshmallows, perfect for a cozy evening at the cafe.",
-    },
-  ];
+  const router = useRouter();
 
   return (
     <section className="py-12 bg-light-blue text-center relative overflow-hidden">
@@ -91,7 +94,10 @@ const WinterSpecials = () => {
         </div>
 
         <div className="mt-8">
-          <button className="bg-primary text-white py-2 px-6 rounded-full shadow-lg hover:bg-accent transition-colors">
+          <button
+            onClick={() => router.push("/menu")}
+            className="bg-primary text-white py-2 px-6 rounded-full shadow-lg hover:bg-accent transition-colors"
+          >
             Explore Our Winter Menu
           </button>
         </div>

@@ -69,6 +69,7 @@ const Navbar = () => {
               { path: "/", label: "Home" },
               { path: "/menu", label: "Our Menu" },
               { path: "/contact", label: "Contact" },
+              { path: "/franchise", label: "Own Franchise" },
               { path: "/blogs", label: "Blogs" },
             ].map((link, index) => (
               <motion.li
@@ -97,7 +98,7 @@ const Navbar = () => {
             {[
               {
                 icon: <SiZomato />,
-                href: "https://zomato.onelink.me/xqzv/6f9flr7g",
+                href: "https://link.zomato.com/xqzv/rshare?id=94994719305639af",
               },
               {
                 icon: <SiSwiggy />,

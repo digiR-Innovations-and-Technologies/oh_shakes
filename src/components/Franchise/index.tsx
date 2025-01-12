@@ -1,6 +1,59 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import toast from "react-hot-toast";
+import emailjs from "emailjs-com";
+import SuccessModal from "../SuccessModal";
+
+const Loader = () => (
+  <div className="flex items-center justify-center">
+    <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white"></div>
+  </div>
+);
 
 const Franchise = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    address: "",
+    driveLink: "",
+  });
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      console.log(formData);
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_FRANCHISE_TEMPLATE_ID!,
+        {
+          name: formData.name,
+          email: formData.email,
+          address: formData.address,
+          driveLink: formData.driveLink,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      setIsSuccessModalOpen(true);
+      setFormData({ name: "", email: "", address: "", driveLink: "" });
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="bg-white text-gray-900 font-sans">
       <div className="max-w-screen-xl mx-auto p-6 space-y-12">
@@ -117,7 +170,7 @@ const Franchise = () => {
             Fill This Application Form
           </h1>
           <div className=" md:p-6 p-4 rounded-lg shadow-sm border">
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <label
                   htmlFor="fullName"
@@ -128,6 +181,10 @@ const Franchise = () => {
                 <input
                   id="fullName"
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  required
+                  onChange={handleChange}
                   placeholder="Your name"
                   className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                 />
@@ -142,6 +199,10 @@ const Franchise = () => {
                 </label>
                 <input
                   id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   type="email"
                   placeholder="Your email address"
                   className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
@@ -158,6 +219,9 @@ const Franchise = () => {
                 <input
                   id="driveLink"
                   type="url"
+                  name="driveLink"
+                  value={formData.driveLink}
+                  onChange={handleChange}
                   placeholder="Paste the Google Drive link here"
                   className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                 />
@@ -173,6 +237,10 @@ const Franchise = () => {
                 <textarea
                   id="address"
                   placeholder="Write your address here..."
+                  name="address"
+                  required
+                  value={formData.address}
+                  onChange={handleChange}
                   rows={4}
                   className="w-full px-3 resize-none py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                 />
@@ -180,8 +248,8 @@ const Franchise = () => {
 
               <div className="space-y-4">
                 <div className="mt-8">
-                  <button className="bg-primary text-white py-2 px-6 rounded-full shadow-lg hover:bg-accent-secondary transition-colors">
-                    Send Request
+                  <button className="bg-primary w-[200px] text-white py-3 px-6 rounded-full shadow-lg hover:bg-accent transition-colors">
+                    {loading ? <Loader /> : "Send Request"}
                   </button>
                 </div>
               </div>
@@ -216,6 +284,10 @@ const Franchise = () => {
           </div>
         </section>
       </div>
+      <SuccessModal
+        isOpen={isSuccessModalOpen}
+        onClose={() => setIsSuccessModalOpen(false)}
+      />
     </div>
   );
 };

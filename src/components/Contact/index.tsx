@@ -1,8 +1,59 @@
 "use client";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { FaMapMarkerAlt, FaClipboardCheck, FaPhoneAlt } from "react-icons/fa";
+import emailjs from "emailjs-com";
+import toast from "react-hot-toast";
+import SuccessModal from "../SuccessModal";
+
+const Loader = () => (
+  <div className="flex items-center justify-center">
+    <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white"></div>
+  </div>
+);
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      setIsSuccessModalOpen(true);
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="grid lg:grid-cols-2 md:gap-24 gap-6 ">
@@ -62,7 +113,7 @@ export default function ContactPage() {
 
         {/* Right Column - Form */}
         <div className="bg-white md:p-6 p-4 rounded-lg shadow-sm border">
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="space-y-2">
               <label
                 htmlFor="fullName"
@@ -73,6 +124,10 @@ export default function ContactPage() {
               <input
                 id="fullName"
                 type="text"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Your name"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
               />
@@ -87,6 +142,10 @@ export default function ContactPage() {
               </label>
               <input
                 id="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
                 type="email"
                 placeholder="Your email address"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
@@ -102,6 +161,9 @@ export default function ContactPage() {
               </label>
               <textarea
                 id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Write your message here..."
                 rows={4}
                 className="w-full px-3 resize-none py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
@@ -110,8 +172,11 @@ export default function ContactPage() {
 
             <div className="space-y-4">
               <div className="mt-8">
-                <button className="bg-primary text-white py-2 px-6 rounded-full shadow-lg hover:bg-accent transition-colors">
-                  Send Message
+                <button
+                  type="submit"
+                  className="bg-primary text-white py-3 px-6 w-[200px] rounded-full shadow-lg hover:bg-accent transition-colors"
+                >
+                  {loading ? <Loader /> : "Send Message"}
                 </button>
               </div>
             </div>
@@ -135,6 +200,10 @@ export default function ContactPage() {
           ></iframe>
         </div>
       </motion.div>
+      <SuccessModal
+        isOpen={isSuccessModalOpen}
+        onClose={() => setIsSuccessModalOpen(false)}
+      />
     </div>
   );
 }
