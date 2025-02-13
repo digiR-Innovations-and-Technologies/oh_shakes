@@ -91,15 +91,15 @@ const Navbar = () => {
             {[
               {
                 icon: <SiZomato />,
-                href: "https://link.zomato.com/xqzv/rshare?id=94994719305639af",
+                href: `${process.env.NEXT_PUBLIC_ZOMATO_URL}`,
               },
               {
                 icon: <SiSwiggy />,
-                href: "https://www.swiggy.com/menu/632170?source=sharing",
+                href: `${process.env.NEXT_PUBLIC_SWIGGY_URL}`,
               },
               {
                 icon: <BsInstagram />,
-                href: "https://www.instagram.com/oh.shakes",
+                href: `${process.env.NEXT_PUBLIC_INSTAGRAM_URL}`,
               },
             ].map((social, index) => (
               <motion.li

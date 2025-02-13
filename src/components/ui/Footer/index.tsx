@@ -155,7 +155,7 @@ export default function Footer() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          © 2024 Oh Shakes. All Rights Reserved.
+          © 2025 Oh Shakes. All Rights Reserved.
         </motion.div>
       </div>
     </footer>
