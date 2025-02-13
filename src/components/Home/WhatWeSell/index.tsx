@@ -20,7 +20,7 @@ const Items = [
     image: "/images/waffle.jpg",
     name: "Waffle",
     description:
-      "Fluffy waffles drizzled with syrup, served with fresh fruits.",
+      "Fluffy waffles drizzled with syrup, served with icecream.",
   },
   {
     image: "/images/mocktail.jpg",

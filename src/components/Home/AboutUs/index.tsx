@@ -50,9 +50,7 @@ const AboutUs = () => {
         >
           <h2 className="text-3xl font-bold text-dark-brown">Our Story</h2>
           <p className="mt-4 text-lg leading-relaxed">
-            At Oh Shakes, we believe in crafting the perfect cup for each
-            customer. we’ve been passionate about serving the finest coffee in a
-            cozy, welcoming environment.
+          At Oh Shakes, we are dedicated to creating indulgent thick shakes and expertly brewed coffees that our customers can always trust for quality and taste, crafted with love and perfection.
             <br /> <br />
             Over the years, we’ve expanded our menu to include a variety of
             beverages and desserts, each crafted with the same attention to
