@@ -95,34 +95,41 @@ export default function Footer() {
           >
             <h3 className="font-bold text-lg mb-4">Follow Us</h3>
             <div className="space-y-2">
-              <a
-                href={process.env.NEXT_PUBLIC_FACEBOOK_URL}
-                className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
-              >
-                <Facebook className="w-4 h-4" />
-                Facebook
-              </a>
-              <a
-                href={process.env.NEXT_PUBLIC_TWITTER_URL}
-                className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
-              >
-                <Twitter className="w-4 h-4" />
-                Twitter
-              </a>
-              <a
-                href={process.env.NEXT_PUBLIC_INSTAGRAM_URL}
-                className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
-              >
-                <Instagram className="w-4 h-4" />
-                Instagram
-              </a>
-              <a
-                href={process.env.NEXT_PUBLIC_LINKEDIN_URL}
-                className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
-              >
-                <Linkedin className="w-4 h-4" />
-                LinkedIn
-              </a>
+              {[
+                {
+                  icon: <Facebook className="w-4 h-4" />,
+                  name: "Facebook",
+                  href: `${process.env.NEXT_PUBLIC_FACEBOOK_URL}`,
+                },
+                {
+                  icon: <Twitter className="w-4 h-4" />,
+                  name: "Twitter",
+                  href: `${process.env.NEXT_PUBLIC_TWITTER_URL}`,
+                },
+                {
+                  icon: <Instagram className="w-4 h-4" />,
+                  name: "Instagram",
+                  href: `${process.env.NEXT_PUBLIC_INSTAGRAM_URL}`,
+                },
+                {
+                  icon: <Linkedin className="w-4 h-4" />,
+                  name: "Linkedin",
+                  href: `${process.env.NEXT_PUBLIC_LINKEDIN_URL}`,
+                }
+              ].map((social, index) => (
+                <a 
+                key={index} 
+                href={social.href} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 w-1/2"
+                >
+                  <div className="flex flex-row gap-2 justify-center items-center">
+                  {social.icon} 
+                  {social.name}
+                  </div>
+                </a>
+              ))}
             </div>
           </motion.div>
 
