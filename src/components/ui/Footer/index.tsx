@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const usefulLinks = [
   {
@@ -32,7 +33,25 @@ const usefulLinks = [
   },
 ];
 
+type SocialLinks = {
+  instagram: string;
+  facebook: string;
+  twitter: string;
+  linkedin: string;
+  swiggy: string;
+  zomato: string;
+};
+
 export default function Footer() {
+  const [links, setLinks] = useState<SocialLinks | null>(null);
+
+  useEffect(() => {
+    fetch("/social-links.json")
+      .then((res) => res.json())
+      .then((data: SocialLinks) => setLinks(data))
+      .catch((err) => console.error("Error loading social links:", err));
+  }, []);
+
   return (
     <footer className="bg-gray-50 flex items-center justify-center border-t">
       <div className="px-4 md:px-6">
@@ -99,22 +118,22 @@ export default function Footer() {
                 {
                   icon: <Facebook className="w-4 h-4" />,
                   name: "Facebook",
-                  href: `${process.env.NEXT_PUBLIC_FACEBOOK_URL}`,
+                  href: `${links?.facebook}`,
                 },
                 {
                   icon: <Twitter className="w-4 h-4" />,
                   name: "Twitter",
-                  href: `${process.env.NEXT_PUBLIC_TWITTER_URL}`,
+                  href: `${links?.twitter}`,
                 },
                 {
                   icon: <Instagram className="w-4 h-4" />,
                   name: "Instagram",
-                  href: `${process.env.NEXT_PUBLIC_INSTAGRAM_URL}`,
+                  href: `${links?.instagram}`,
                 },
                 {
                   icon: <Linkedin className="w-4 h-4" />,
                   name: "Linkedin",
-                  href: `${process.env.NEXT_PUBLIC_LINKEDIN_URL}`,
+                  href: `${links?.linkedin}`,
                 }
               ].map((social, index) => (
                 <a 

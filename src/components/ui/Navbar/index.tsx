@@ -8,10 +8,27 @@ import { SiSwiggy, SiZomato } from "react-icons/si";
 import { BsInstagram } from "react-icons/bs";
 import { motion } from "framer-motion";
 
+type SocialLinks = {
+  instagram: string;
+  facebook: string;
+  twitter: string;
+  linkedin: string;
+  swiggy: string;
+  zomato: string;
+};
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false); // State to manage visibility
   const router = useRouter();
+  const [links, setLinks] = useState<SocialLinks | null>(null);
+  
+    useEffect(() => {
+      fetch("/social-links.json")
+        .then((res) => res.json())
+        .then((data: SocialLinks) => setLinks(data))
+        .catch((err) => console.error("Error loading social links:", err));
+    }, []);
 
   const onCloseModal = () => setIsOpen(false);
 
@@ -91,15 +108,15 @@ const Navbar = () => {
             {[
               {
                 icon: <SiZomato />,
-                href: `${process.env.NEXT_PUBLIC_ZOMATO_URL}`,
+                href: `${links?.zomato}`,
               },
               {
                 icon: <SiSwiggy />,
-                href: `${process.env.NEXT_PUBLIC_SWIGGY_URL}`,
+                href: `${links?.swiggy}`,
               },
               {
                 icon: <BsInstagram />,
-                href: `${process.env.NEXT_PUBLIC_INSTAGRAM_URL}`,
+                href: `${links?.instagram}`,
               },
             ].map((social, index) => (
               <motion.li
