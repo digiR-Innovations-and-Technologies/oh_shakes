@@ -13,23 +13,31 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { FiPhone } from "react-icons/fi";
+import { GoBook } from "react-icons/go";
+import { MdStore } from "react-icons/md";
+import { TiInfoLargeOutline } from "react-icons/ti";
 
 const usefulLinks = [
   {
     title: "About Us",
     href: "/about",
+    icon: <TiInfoLargeOutline />,
   },
   {
     title: "Contact Us",
     href: "/contact",
+    icon: <FiPhone />,
   },
   {
     title: "Own Franchise",
     href: "/franchise",
+    icon: <MdStore />,
   },
   {
     title: "Blogs",
     href: "/blogs",
+    icon: <GoBook />,
   },
 ];
 
@@ -96,9 +104,9 @@ export default function Footer() {
                 href="mailto:ohshakes6999@gmail.com"
                 >ohshakes6999@gmail.com</a>
               </div>
-              <div className="flex items-center gap-2 text-gray-600">
+              <div className="flex items-start gap-2 text-gray-600">
                 <div>
-                  <MapPin className="w-4 h-4" />
+                  <MapPin className="w-4 h-4 mt-1" />
                 </div>
                 <span>Station Rd, Kote Gate, Bikaner, Rajasthan 334001</span>
               </div>
@@ -164,10 +172,11 @@ export default function Footer() {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="block text-gray-600 hover:text-gray-900"
+                  className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
                 >
+                  {link.icon}
                   {link.title}
-                </Link>
+                </Link>              
               ))}
             </div>
           </motion.div>
