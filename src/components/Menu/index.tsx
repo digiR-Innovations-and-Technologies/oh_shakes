@@ -2,6 +2,7 @@
 import React, { ReactNode, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { IceCream } from "lucide-react";
+import { IoSparklesOutline } from "react-icons/io5";
 
 import {
   Coffee,
@@ -40,7 +41,16 @@ const menuInfo = [
     section: "Italian Thick Shakes",
     subsections: [
       {
-        category: "Fruit Shake",
+        category: "Sugar-Free Shakes",
+        icon: <IoSparklesOutline />,
+        description: "No added sugar",
+        items: [
+          { name: "Kaju Anjeer", price: 99, largePrice: 139 },
+          { name: "Black Currant Blast", price: 99, largePrice: 139 },
+        ],
+      },
+      {
+        category: "Fruit Shakes",
         icon: <Milk />,
         description: "",
         items: [
@@ -57,7 +67,7 @@ const menuInfo = [
         ],
       },
       {
-        category: "Traditional/Dry Fruites",
+        category: "Traditional/Dry Fruit Shakes",
         icon: <Cherry />,
         description: "",
         items: [
@@ -89,7 +99,7 @@ const menuInfo = [
         ],
       },
       {
-        category: "Cheese Shake",
+        category: "Cheese Shakes",
         icon: <Milk />,
         description: "",
         items: [
