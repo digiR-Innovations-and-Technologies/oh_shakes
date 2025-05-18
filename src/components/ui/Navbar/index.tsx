@@ -81,6 +81,7 @@ const Navbar = () => {
               { path: "/contact", label: "Contact" },
               { path: "/franchise", label: "Own Franchise" },
               { path: "/blogs", label: "Blogs" },
+              { path: "/about", label: "About Us" },
             ].map((link, index) => (
               <motion.li
                 key={index}

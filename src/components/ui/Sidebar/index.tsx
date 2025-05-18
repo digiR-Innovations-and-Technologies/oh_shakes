@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { FiHome, FiCoffee, FiPhone } from "react-icons/fi";
+import { FiHome, FiPhone } from "react-icons/fi";
 import { GoBook } from "react-icons/go";
-import { IoCafe } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
+import { TiInfoLargeOutline } from "react-icons/ti";
+import { TbMilkshake } from "react-icons/tb";
+import { MdStore } from "react-icons/md";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -68,7 +70,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         <ul className="flex-grow px-6 py-4 space-y-6 relative z-10">
           {[
             { label: "Home", icon: <FiHome />, link: "/" },
-            { label: "Menu", icon: <FiCoffee />, link: "/menu" },
+            { label: "Menu", icon: <TbMilkshake />, link: "/menu" },
             { label: "Contact Us", icon: <FiPhone />, link: "/contact" },
             {
               label: "Blogs",
@@ -77,9 +79,14 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             },
             {
               label: "Own Franchise",
-              icon: <IoCafe />,
+              icon: <MdStore />,
               link: "/franchise",
             },
+            {
+              label: "About Us",
+              icon: <TiInfoLargeOutline />,
+              link: "/about",
+            }
           ].map((item, index) => (
             <li
               onClick={() => handleNavigate(item.link)}
