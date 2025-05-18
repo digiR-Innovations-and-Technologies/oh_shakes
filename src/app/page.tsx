@@ -6,14 +6,14 @@ import { Newsletter } from "@/components/Home/Newsletter";
 import ShopImages from "@/components/Home/ShopImages";
 import Testimonials from "@/components/Home/Testimonials";
 import WhatWeSell from "@/components/Home/WhatWeSell";
-import WinterSpecials from "@/components/Home/Winter";
+import {SummerSpecials} from "@/components/Home/Specials";
 
 const Home = () => {
   return (
     <div className="container mx-auto">
       <Hero />
       <AboutUs />
-      <WinterSpecials />
+      <SummerSpecials />
       <ShopImages />
       <WhatWeSell />
       <Features />
