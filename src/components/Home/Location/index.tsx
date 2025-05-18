@@ -40,8 +40,8 @@ const Location = () => {
           <div className="flex items-start mb-6 mx-auto md:mx-0 text-center md:text-left">
             <FaClock className="text-dark-brown text-2xl mr-2" />
             <div>
-              <p className="text-lg md:text-md">Mon - Fri: 11 AM - 11:45 PM</p>
-              <p className="text-lg md:text-md">Sat - Sun: 11 AM - 11:45 PM</p>
+              <p className="text-lg md:text-md">Mon - Fri: 10 AM - 11:45 PM</p>
+              <p className="text-lg md:text-md">Sat - Sun: 10 AM - 11:45 PM</p>
             </div>
           </div>
 
