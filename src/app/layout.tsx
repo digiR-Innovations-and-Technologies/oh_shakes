@@ -7,6 +7,7 @@ import Footer from "@/components/ui/Footer";
 import Announcement from "@/components/ui/Announcement";
 import TopArrow from "@/components/ui/TopArrow";
 import OrderButton from "@/components/ui/OrderButton";
+import Analytics from "./analytics";
 
 // Import Caveat and Nunito fonts
 export const caveat = Caveat({
@@ -36,6 +37,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${caveat.variable} ${nunito.variable}`}>
         <main className="pb-[78px] md:pb-0">
+          <Analytics/>
           <TopArrow />
           <OrderButton/>
           <Announcement />
