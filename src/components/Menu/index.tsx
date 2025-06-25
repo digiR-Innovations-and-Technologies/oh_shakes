@@ -45,8 +45,9 @@ const menuInfo = [
         icon: <IoSparklesOutline />,
         description: "No added sugar",
         items: [
-          { name: "Kaju Anjeer", price: 99, largePrice: 139 },
-          { name: "Black Currant Blast", price: 99, largePrice: 139 },
+          { name: "Kaju Anjeer", price: 139, largePrice: 179 },
+          { name: "Black Currant Blast", price: 139, largePrice: 179 },
+          { name: "Coffee", price: 139, largePrice: 179 },
         ],
       },
       {
