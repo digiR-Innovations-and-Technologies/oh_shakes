@@ -63,24 +63,11 @@ function VariableWidthSwiper() {
           >
             <div className="h-full w-auto">
               <Image
-                <link href="https://awards.infcdn.net/2024/circle_v3.css" 
-                  rel="stylesheet"/>
-              <div id="circle_bw" 
-                data-length="29" 
-                class="circle_bw_black" 
-                onclick="if(event.target.nodeName.toLowerCase() != 'a') {window.open(this.querySelector('.circle_bw_link').href);return 0;}">
-                <p class="circle_bw_year">2026</p>
-                <div class="circle_bw_name "> 
-                  <a class="circle_bw_link" target="_blank" href="https://restaurant-guru.in/Oh-Shakes-Bikaner">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="178px" height="178px" viewBox="0 0 178 178">
-                      <defs> <path id="circle_bw_name-arc" d="M 12 89 a 77 77 0 0 0 154 0"></path> </defs> <text class="circle_bw_name_txt " fill="#000" text-anchor="middle"> 
-                        <textPath startOffset="50%" xlink:href="#circle_bw_name-arc"> 
-                          Oh Shakes </textPath> </text> </svg> </a> </div> <div class="circle_bw_nom ">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200px" height="200px" viewBox="0 0 200 200"> 
-                              <defs> <path id="circle_bw_nom-arc1" d="M 30 100 a 70 70 0 1 1 140 0"></path> </defs> <text class="circle_bw_nom_txt " fill="#000" text-anchor="middle">
-                                <textPath startOffset="50%" xlink:href="#circle_bw_nom-arc1">Recommended</textPath> </text> </svg> </div>
-                <a class="circle_bw_home" style="font-size: 0" href="https://restaurantguru.com" target="_blank">Restaurant Guru</a></div>
-              />
+                src={"/images/hero/image1.jpeg"}
+                alt="image 1"
+                width={800}
+                height={400}
+                className="object-cover h-full w-auto rounded-lg"
             </div>
           </SwiperSlide>
           <SwiperSlide
