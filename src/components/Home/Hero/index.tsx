@@ -68,6 +68,7 @@ function VariableWidthSwiper() {
                 width={800}
                 height={400}
                 className="object-cover h-full w-auto rounded-lg"
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide
